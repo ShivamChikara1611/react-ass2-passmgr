@@ -70,14 +70,8 @@ class App extends Component {
   }
 
   render() {
-    const {
-      website,
-      username,
-      password,
-      latestList,
-      isShow,
-      searchInput,
-    } = this.state
+    const {website, username, password, latestList, isShow, searchInput} =
+      this.state
     let {isTrue} = this.state
     const newList = latestList.filter(eachValue =>
       eachValue.websiteName.toLowerCase().includes(searchInput.toLowerCase()),
@@ -220,8 +214,8 @@ class App extends Component {
                   <button
                     type="button"
                     className="del-btn"
+                    data-testid = "delete"
                     onClick={() => this.deleteItem(eachValue.id)}
-                    testid="delete"
                   >
                     <img
                       src="https://assets.ccbp.in/frontend/react-js/password-manager-delete-img.png"
